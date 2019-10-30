@@ -28,7 +28,7 @@ PARSER.set_defaults(rand_start=True)
 PARSER.add_argument('-lr', '--learning_rate', default=0.02, type=float, help='learning rate')
 PARSER.add_argument('-ni', '--n_iters', default=20, type=int, help='number of iterations')
 ARGS = PARSER.parse_args()
-print ARGS
+print (ARGS)
 
 
 GAMMA = ARGS.gamma
@@ -98,7 +98,7 @@ def main():
 
   trajs = generate_demonstrations(gw, policy_gt, n_trajs=N_TRAJS, len_traj=L_TRAJ, rand_start=RAND_START)
   
-  print 'Deep Max Ent IRL training ..'
+  print ('Deep Max Ent IRL training ..')
   rewards = deep_maxent_irl(feat_map, P_a, GAMMA, trajs, LEARNING_RATE, N_ITERS)
 
   values, _ = value_iteration.value_iteration(P_a, rewards, GAMMA, error=0.01, deterministic=True)

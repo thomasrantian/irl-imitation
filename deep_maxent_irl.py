@@ -148,7 +148,7 @@ def deep_maxent_irl(feat_map, P_a, gamma, trajs, lr, n_iters):
   # training 
   for iteration in range(n_iters):
     if iteration % (n_iters/10) == 0:
-      print 'iteration: {}'.format(iteration)
+      print ('iteration: {}'.format(iteration))
     
     # compute the reward matrix
     rewards = nn_r.get_rewards(feat_map)
